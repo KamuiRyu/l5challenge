@@ -1,2 +1,4 @@
 /docker/pgdata/
 /docker/apache/apache_log/
+/docker/apache/apache_log
+/docker/apache/apache_log/*
