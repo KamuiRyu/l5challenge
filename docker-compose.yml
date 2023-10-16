@@ -1,0 +1,39 @@
+version: '3'
+services:
+    db:
+        image: postgres:latest
+        container_name: db
+        tty: true
+        ports:
+            - 54320:5432
+        environment:
+            POSTGRES_DB: postgresql
+            POSTGRES_USER: postgresql
+            POSTGRES_PASSWORD: Acesso123
+        volumes:
+            - ./docker/pgdata:/var/lib/postgresql/data
+        restart: unless-stopped
+    web:
+        container_name: web
+        build:
+            context: .
+            dockerfile: docker/apache/Dockerfile
+        restart: unless-stopped
+        volumes: 
+            - ./src:/var/www/html
+            - ./docker/apache/apache_log:/var/log/apache2
+        ports:
+            - 80:80
+        depends_on: 
+            - db
+        links:
+            - db:5432
+    adminer:
+        image: adminer
+        container_name: adminer
+        restart: unless-stopped
+        ports:
+            - 8080:8080
+volumes:
+    db_data:
+    src:

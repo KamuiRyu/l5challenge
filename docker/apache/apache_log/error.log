@@ -1,0 +1,9 @@
+[Mon Oct 16 13:49:33.756756 2023] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.54 (Debian) PHP/7.4.33 configured -- resuming normal operations
+[Mon Oct 16 13:49:33.757071 2023] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon Oct 16 13:49:51.298088 2023] [php7:error] [pid 16] [client 172.25.0.1:35308] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 7.4.33. in /var/www/html/vendor/composer/platform_check.php on line 24, referer: https://avenirer.medium.com/codeigniter-4-step-2-installing-codeigniter-in-docker-containers-avenirer-40632212511d
+[Mon Oct 16 13:51:57.750299 2023] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+[Mon Oct 16 13:51:59.883488 2023] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.57 (Debian) PHP/8.1.24 configured -- resuming normal operations
+[Mon Oct 16 13:51:59.883824 2023] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[Mon Oct 16 17:19:24.618095 2023] [mpm_prefork:notice] [pid 1] AH00170: caught SIGWINCH, shutting down gracefully
+[Mon Oct 16 17:51:44.171727 2023] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.57 (Debian) PHP/8.1.24 configured -- resuming normal operations
+[Mon Oct 16 17:51:44.181908 2023] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
