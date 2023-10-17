@@ -23,6 +23,11 @@ use CodeIgniter\Router\RouteCollection;
         $routes->put('(:num)', 'ProductController::update_product/$1', ['filter' => 'authFilter']);
     });
 
+     // Rotas de Pedidos
+     $routes->group("pedidos", function ($routes) {
+        $routes->post('', 'OrderController::create_order', ['filter' => 'authFilter']);        $routes->delete('(:num)', 'ClientController::delete_client/$1', ['filter' => 'authFilter']);
+    });
+
     // Rotas de Usuário
     $routes->post("register", "UserController::register");
     $routes->post("login", "UserController::login");
