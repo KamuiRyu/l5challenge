@@ -21,6 +21,7 @@ class CreateTableClientes extends Migration
             ],
             'cpf_cnpj' => [
                 'type' => 'VARCHAR',
+                'unique' => true,
                 'constraint' => 14,
             ],
             'endereco' => [

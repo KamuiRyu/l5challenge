@@ -21,7 +21,7 @@ class ProductController extends BaseController
                 return $this->responseData(400, 'Os parametros não foram informados');
             }
 
-            $validationErrors = $this->product_validation($parametros);
+            $validationErrors = $this->product_validation($parametros, 1);
             if (!empty($validationErrors)) {
                 $retorno = array(
                     'errors' => $validationErrors

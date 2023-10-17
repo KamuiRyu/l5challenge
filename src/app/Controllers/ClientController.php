@@ -25,7 +25,7 @@ class ClientController extends BaseController
                 return $this->responseData(400, 'Os parametros não foram informados');
             }
 
-            $validationErrors = $this->client_validation($parametros);
+            $validationErrors = $this->client_validation($parametros, 1);
             if (!empty($validationErrors)) {
                 $retorno = array(
                     'errors' => $validationErrors
