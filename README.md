@@ -66,6 +66,14 @@ php spark migrate
 
 Para utilizar a necessário uma ferramenta que realiza requisições HTTP, como o postman. Na pasta docs do projeto, tem o collection com todas as rotas disponíveis no projeto.
 
+## Autorização
+
+Todas as rotas, exceto `login` e `register`, requerem autorização. Para concluir uma requisição com sucesso, você deve incluir um token de autorização no cabeçalho da seguinte forma:
+
+```
+Authorization: Bearer {token}
+``´
+
 ## Exemplos de Requisições
 
 Aqui estão alguns exemplos de como fazer solicitações à API:
