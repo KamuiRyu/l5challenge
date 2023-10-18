@@ -6,7 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
- $routes->group("api", function ($routes) {
+$routes->group("api", function ($routes) {
     // Rotas de Clientes
     $routes->group("clientes", function ($routes) {
         $routes->get('', 'ClientController::get_clients', ['filter' => 'authFilter']);
@@ -23,13 +23,15 @@ use CodeIgniter\Router\RouteCollection;
         $routes->put('(:num)', 'ProductController::update_product/$1', ['filter' => 'authFilter']);
     });
 
-     // Rotas de Pedidos
-     $routes->group("pedidos", function ($routes) {
-        $routes->post('', 'OrderController::create_order', ['filter' => 'authFilter']);        $routes->delete('(:num)', 'ClientController::delete_client/$1', ['filter' => 'authFilter']);
+    // Rotas de Pedidos
+    $routes->group("pedidos", function ($routes) {
+        $routes->get('', 'OrderController::get_orders', ['filter' => 'authFilter']);
+        $routes->post('', 'OrderController::create_order', ['filter' => 'authFilter']);
+        $routes->delete('(:num)', 'OrderController::delete_order/$1', ['filter' => 'authFilter']);
+        $routes->put('(:num)', 'OrderController::update_order/$1', ['filter' => 'authFilter']);
     });
 
     // Rotas de Usuário
     $routes->post("register", "UserController::register");
     $routes->post("login", "UserController::login");
 });
-

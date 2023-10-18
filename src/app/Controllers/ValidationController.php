@@ -109,28 +109,35 @@ class ValidationController extends BaseController
                             }
                             break;
                         case 'array':
-                            $array = isset($data[$field]) ? $data[$field] : null;
-                            if (!empty($array) && empty($array['id'])) {
-                                $errors[] = sprintf($errorMessages[$ruleName], $field);
-                            }
-                            if (isset($array['id']) && !is_numeric($array['id'])) {
-                                $errors[] = sprintf($errorMessages['integer'], $field . ".id");
+                            
+                            
+                            if (isset($data[$field])) {
+
+                                $array = isset($data[$field]) ? $data[$field] : null;
+                                if (!empty($array) && empty($array['id'])) {
+                                    $errors[] = sprintf($errorMessages[$ruleName], $field);
+                                }
+                                if (isset($array['id']) && !is_numeric($array['id'])) {
+                                    $errors[] = sprintf($errorMessages['integer'], $field . ".id");
+                                }
                             }
                             break;
                         case 'enum':
-                            if (isset($valuesAccept) && !empty($valuesAccept)) {
-                                $isValid = false;
-                                $fieldValue = strtolower(trim($data[$field]));
-                                $trimmedValuesAccept = array_map('trim', $valuesAccept);
-                                $acceptedValuesList = implode(', ', $trimmedValuesAccept);
-                                foreach ($valuesAccept as $accept) {
-                                    if (strtolower(trim($accept)) === $fieldValue) {
-                                        $isValid = true;
-                                        break;
+                            if (isset($data[$field])) {
+                                if (isset($valuesAccept) && !empty($valuesAccept)) {
+                                    $isValid = false;
+                                    $fieldValue = strtolower(trim($data[$field]));
+                                    $trimmedValuesAccept = array_map('trim', $valuesAccept);
+                                    $acceptedValuesList = implode(', ', $trimmedValuesAccept);
+                                    foreach ($valuesAccept as $accept) {
+                                        if (strtolower(trim($accept)) === $fieldValue) {
+                                            $isValid = true;
+                                            break;
+                                        }
                                     }
-                                }
-                                if (!$isValid) {
-                                    $errors[] = sprintf($errorMessages[$ruleName], $field, $acceptedValuesList);
+                                    if (!$isValid) {
+                                        $errors[] = sprintf($errorMessages[$ruleName], $field, $acceptedValuesList);
+                                    }
                                 }
                             }
                             break;

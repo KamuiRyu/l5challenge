@@ -8,7 +8,7 @@ class CreateTablePedidos extends Migration
 {
     public function up()
     {
-        $this->db->query("CREATE TYPE status_pedido AS ENUM ('Em aberto', 'Pago', 'Cancelado')");
+        $this->db->query("CREATE TYPE status_pedido AS ENUM ('em aberto', 'pago', 'cancelado')");
         $this->forge->addField([
             'id' => [
                 'type' => 'INT',
@@ -31,8 +31,16 @@ class CreateTablePedidos extends Migration
             ],
             'status' => [
                 'type' => 'status_pedido',
-                'default' => 'Em aberto',
+                'default' => 'em aberto',
                 'null' => false
+            ],
+            'created_at' => [
+                'type' => 'TIMESTAMP',
+                'null' => true
+            ],
+            'updated_at' => [
+                'type' => 'TIMESTAMP',
+                'null' => true
             ],
         ]);
 

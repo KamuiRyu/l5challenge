@@ -211,7 +211,7 @@ class ProdutoModel extends Model
                 }
             }
         }
-
+        $query->limit($limit, $offset);
         $results = $query->get()->getResultArray();
         foreach ($results as &$result) {
             foreach ($jsonFields as $value) {
