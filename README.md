@@ -72,7 +72,7 @@ Todas as rotas, exceto `login` e `register`, requerem autorização. Para conclu
 
 ```
 Authorization: Bearer {token}
-``´
+```
 
 ## Exemplos de Requisições
 
