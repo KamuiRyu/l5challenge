@@ -144,11 +144,11 @@ Campos que podem ser utilizados no filtro:
 - **Tipo**: string
 - **Condições permitidas**: =, ilike, like, <>
 
-- #### `created_at`
+#### `created_at`
 - **Tipo**: date
 - **Condições permitidas**: =, <, >, <=, >=, between
 
-- #### `updated_at`
+#### `updated_at`
 - **Tipo**: date
 - **Condições permitidas**: =, <, >, <=, >=, between
 
@@ -234,11 +234,11 @@ Campos que podem ser utilizados no filtro:
 - **Tipo**: string
 - **Condições permitidas**: =, ilike, like, <>
 
-- #### `created_at`
+#### `created_at`
 - **Tipo**: date
 - **Condições permitidas**: =, <, >, <=, >=, between
 
-- #### `updated_at`
+#### `updated_at`
 - **Tipo**: date
 - **Condições permitidas**: =, <, >, <=, >=, between
 
